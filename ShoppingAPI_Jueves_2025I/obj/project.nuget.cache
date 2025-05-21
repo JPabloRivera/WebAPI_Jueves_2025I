@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0NwZQ5H2UTc=",
+  "dgSpecHash": "GpsTLkn1+cA=",
   "success": true,
-  "projectFilePath": "C:\\ReposITM\\API_Jueves\\ShoppingAPI_Jueves_2025I\\ShoppingAPI_Jueves_2025I.csproj",
+  "projectFilePath": "C:\\Users\\Usuario\\Source\\Repos\\WebAPI_Jueves_2025I\\ShoppingAPI_Jueves_2025I\\ShoppingAPI_Jueves_2025I.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Usuario\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Usuario\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
