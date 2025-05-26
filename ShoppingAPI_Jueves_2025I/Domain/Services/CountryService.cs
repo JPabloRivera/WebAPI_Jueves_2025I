@@ -97,7 +97,7 @@ namespace ShoppingAPI_Jueves_2025I.Domain.Services
                 _context.Countries.Remove(country);
 
                 await _context.SaveChangesAsync();
-
+                
                 return country;
             }
             catch (DbUpdateException dbUpdateException)
