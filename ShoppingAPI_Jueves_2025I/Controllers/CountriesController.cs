@@ -15,6 +15,7 @@ namespace ShoppingAPI_Jueves_2025I.Controllers
         {
             _countryService = countryService;
         }
+
         [HttpGet, ActionName("Get")]
         [Route("GetAll")]
         public async Task<ActionResult<IEnumerable<Country>>> GetCountriesAsync() 

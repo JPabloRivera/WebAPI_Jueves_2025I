@@ -122,5 +122,140 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "ShoppingAPI_Jueves_2025I.Controllers.StatesController",
+    "Method": "CreateStateAsync",
+    "RelativePath": "api/States/Create",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "state",
+        "Type": "ShoppingAPI_Jueves_2025I.DAL.Entities.State",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ShoppingAPI_Jueves_2025I.DAL.Entities.State",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ShoppingAPI_Jueves_2025I.Controllers.StatesController",
+    "Method": "DeleteStateAsync",
+    "RelativePath": "api/States/Delete",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "guid",
+        "Type": "System.Guid",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ShoppingAPI_Jueves_2025I.DAL.Entities.State",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ShoppingAPI_Jueves_2025I.Controllers.StatesController",
+    "Method": "EditStateAsync",
+    "RelativePath": "api/States/Edit",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "state",
+        "Type": "ShoppingAPI_Jueves_2025I.DAL.Entities.State",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ShoppingAPI_Jueves_2025I.DAL.Entities.State",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ShoppingAPI_Jueves_2025I.Controllers.StatesController",
+    "Method": "GetStatesByCountryIdAsync",
+    "RelativePath": "api/States/GetByCountryId/{countryId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "state",
+        "Type": "ShoppingAPI_Jueves_2025I.DAL.Entities.State",
+        "IsRequired": true
+      },
+      {
+        "Name": "countryId",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ShoppingAPI_Jueves_2025I.DAL.Entities.State, ShoppingAPI_Jueves_2025I, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ShoppingAPI_Jueves_2025I.Controllers.StatesController",
+    "Method": "GetStatesByNameAsync",
+    "RelativePath": "api/States/GetByName/{stateName}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "stateName",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[ShoppingAPI_Jueves_2025I.DAL.Entities.State, ShoppingAPI_Jueves_2025I, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   }
 ]
