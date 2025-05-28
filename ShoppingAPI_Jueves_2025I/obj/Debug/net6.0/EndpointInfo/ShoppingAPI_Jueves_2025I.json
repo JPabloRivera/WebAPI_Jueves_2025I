@@ -5,12 +5,11 @@
     "version": "1.0"
   },
   "paths": {
-    "/WeatherForecast": {
+    "/api/Countries/GetAll": {
       "get": {
         "tags": [
-          "WeatherForecast"
+          "Countries"
         ],
-        "operationId": "GetWeatherForecast",
         "responses": {
           "200": {
             "description": "Success",
@@ -19,7 +18,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
+                    "$ref": "#/components/schemas/Country"
                   }
                 }
               },
@@ -27,7 +26,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
+                    "$ref": "#/components/schemas/Country"
                   }
                 }
               },
@@ -35,8 +34,183 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/WeatherForecast"
+                    "$ref": "#/components/schemas/Country"
                   }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Countries/GetById/{id}": {
+      "get": {
+        "tags": [
+          "Countries"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Country"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Country"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Country"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Countries/Create": {
+      "post": {
+        "tags": [
+          "Countries"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Country"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Country"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Country"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Country"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Country"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Country"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Countries/Edit": {
+      "put": {
+        "tags": [
+          "Countries"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Country"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Country"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Country"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Country"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Country"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Country"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Countries/Delete": {
+      "delete": {
+        "tags": [
+          "Countries"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "string",
+              "format": "uuid"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Country"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Country"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Country"
                 }
               }
             }
@@ -47,25 +221,70 @@
   },
   "components": {
     "schemas": {
-      "WeatherForecast": {
+      "Country": {
+        "required": [
+          "id",
+          "name"
+        ],
         "type": "object",
         "properties": {
-          "date": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "createdDate": {
             "type": "string",
             "format": "date-time"
           },
-          "temperatureC": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "temperatureF": {
-            "type": "integer",
-            "format": "int32",
-            "readOnly": true
-          },
-          "summary": {
+          "modifiedDate": {
             "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string"
+          },
+          "states": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/State"
+            },
             "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "State": {
+        "required": [
+          "id",
+          "name"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "createdDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "modifiedDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "name": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string"
+          },
+          "country": {
+            "$ref": "#/components/schemas/Country"
+          },
+          "countryId": {
+            "type": "string",
+            "format": "uuid"
           }
         },
         "additionalProperties": false

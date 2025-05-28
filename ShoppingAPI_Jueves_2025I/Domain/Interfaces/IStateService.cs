@@ -8,7 +8,7 @@ namespace ShoppingAPI_Jueves_2025I.Domain.Interfaces
 
         Task<IEnumerable<State>> GetStatesByCountryIdAsync(State state, Guid countryId);
 
-        Task<IEnumerable<State>> GetStatesByNameCountryAsync(State state, Country country);
+        Task<IEnumerable<State>> GetStatesByNameAsync(String stateName);
 
         Task<State> CreateStateAsync(State state);
 
