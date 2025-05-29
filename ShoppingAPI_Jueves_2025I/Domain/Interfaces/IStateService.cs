@@ -6,7 +6,7 @@ namespace ShoppingAPI_Jueves_2025I.Domain.Interfaces
     public interface IStateService
     {
 
-        Task<IEnumerable<State>> GetStatesByCountryIdAsync(State state, Guid countryId);
+        Task<IEnumerable<State>> GetStatesByCountryIdAsync(Guid countryId);
 
         Task<IEnumerable<State>> GetStatesByNameAsync(String stateName);
 

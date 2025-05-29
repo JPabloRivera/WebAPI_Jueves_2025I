@@ -19,11 +19,11 @@ namespace ShoppingAPI_Jueves_2025I.Controllers
         [HttpGet, ActionName("Get")]
         [Route("GetByCountryId/{countryId}")]
 
-        public async Task<ActionResult<IEnumerable<State>>> GetStatesByCountryIdAsync(State state, Guid countryId)
+        public async Task<ActionResult<IEnumerable<State>>> GetStatesByCountryIdAsync(Guid countryId)
         {
-            var states = await _stateService.GetStatesByCountryIdAsync(state, countryId);
+            var states = await _stateService.GetStatesByCountryIdAsync(countryId);
 
-            if (states == null || states.Any()) return NotFound(); // NotFound = Status Code 404
+            if (states == null || !states.Any()) return NotFound(); // NotFound = Status Code 404
 
             return Ok(states); // Ok = Status Code 200
 
@@ -36,7 +36,7 @@ namespace ShoppingAPI_Jueves_2025I.Controllers
         {
             var states = await _stateService.GetStatesByNameAsync(stateName);
 
-            if (states == null || states.Any()) return NotFound();
+            if (states == null || !states.Any()) return NotFound();
 
             return Ok(states);
 
@@ -45,7 +45,7 @@ namespace ShoppingAPI_Jueves_2025I.Controllers
         [HttpPost, ActionName("Create")]
         [Route("Create")]
 
-        public async Task<ActionResult<State>> CreateStateAsync(State state)
+        public async Task<ActionResult<State>> CreateStateAsync([FromBody] State state)
         {
             try
             {
@@ -65,7 +65,7 @@ namespace ShoppingAPI_Jueves_2025I.Controllers
         [HttpPut, ActionName("Edit")]
         [Route("Edit")]
 
-        public async Task<ActionResult<State>> EditStateAsync(State state)
+        public async Task<ActionResult<State>> EditStateAsync([FromBody] State state)
         {
             try
             {
@@ -89,7 +89,7 @@ namespace ShoppingAPI_Jueves_2025I.Controllers
 
         public async Task<ActionResult<State>> DeleteStateAsync(Guid guid)
         {
-            if (guid == null) return BadRequest();
+            if (guid == Guid.Empty) return BadRequest(); 
 
                 var deletedState = await _stateService.DeleteStateAsync(guid);
 

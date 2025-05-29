@@ -210,11 +210,6 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "state",
-        "Type": "ShoppingAPI_Jueves_2025I.DAL.Entities.State",
-        "IsRequired": true
-      },
-      {
         "Name": "countryId",
         "Type": "System.Guid",
         "IsRequired": true

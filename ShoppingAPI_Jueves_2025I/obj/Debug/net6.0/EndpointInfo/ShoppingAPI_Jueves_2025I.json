@@ -234,25 +234,6 @@
             }
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/State"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/State"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/State"
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
             "description": "Success",
@@ -529,9 +510,6 @@
             "maxLength": 50,
             "minLength": 1,
             "type": "string"
-          },
-          "country": {
-            "$ref": "#/components/schemas/Country"
           },
           "countryId": {
             "type": "string",

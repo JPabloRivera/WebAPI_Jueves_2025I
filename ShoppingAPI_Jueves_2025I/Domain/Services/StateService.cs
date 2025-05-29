@@ -15,7 +15,7 @@ namespace ShoppingAPI_Jueves_2025I.Domain.Services
                 _context = context;
         }
 
-        public async Task<IEnumerable<State>> GetStatesByCountryIdAsync(State state, Guid countryId)
+        public async Task<IEnumerable<State>> GetStatesByCountryIdAsync(Guid countryId)
         {
             try
             {

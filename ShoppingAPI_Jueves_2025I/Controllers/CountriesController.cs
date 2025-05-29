@@ -22,7 +22,7 @@ namespace ShoppingAPI_Jueves_2025I.Controllers
         {
             var countries = await _countryService.GetCountriesAsync();
 
-            if (countries == null || countries.Any()) return NotFound();
+            if (countries == null || !countries.Any()) return NotFound();
 
             return Ok(countries);
         }
@@ -84,7 +84,7 @@ namespace ShoppingAPI_Jueves_2025I.Controllers
         [Route("Delete")]
         public async Task<ActionResult<Country>> DeleteCountryAsync(Guid id)
         {
-            if (id == null) return BadRequest();
+            if (id == Guid.Empty) return BadRequest();
 
             var deletedCountry = await _countryService.DeleteCountryAsync(id);
 
